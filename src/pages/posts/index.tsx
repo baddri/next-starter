@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next/types';
-import styled from 'styled-components';
+import { Title } from 'components/Title';
 
 interface PostsProps {
   posts: string[];
@@ -9,13 +9,13 @@ export default function Posts({ posts }: PostsProps) {
   return (
     <div>
       {posts.map((post) => (
-        <Title key={post}>{post}</Title>
+        <Title as="h2" key={post}>
+          {post}
+        </Title>
       ))}
     </div>
   );
 }
-
-const Title = styled.h2``;
 
 export const getServerSideProps: GetServerSideProps = async () => {
   return {

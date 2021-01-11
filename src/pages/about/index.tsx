@@ -1,3 +1,5 @@
+import { P } from 'components/P';
+
 export default function About() {
-	return <div>About</div>;
+  return <P>This is about pages</P>;
 }
